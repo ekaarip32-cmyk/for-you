@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#f8c7d8,#ff9eb5);
+overflow:hidden;
+}
+
+.card{
+width:500px;
+max-width:90%;
+background:white;
+padding:50px 30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+position:relative;
+}
+
+h1{
+font-size:42px;
+font-weight:bold;
+margin-bottom:35px;
+}
+
+.btns{
+display:flex;
+justify-content:center;
+gap:25px;
+}
+
+button{
+border:none;
+padding:10px 20px;
+border-radius:5px;
+background:#49dfff;
+cursor:pointer;
+font-weight:bold;
+}
+
+#love{
+display:none;
+font-size:42px;
+font-weight:bold;
+margin-top:25px;
+}
+
+#no{
+position:relative;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<h1>Will you be my girlfriend?</h1>
+
+<div class="btns">
+<button id="no">No</button>
+<button id="yes">Yes</button>
+</div>
+
+<div id="love">
+🖤🖤🖤 I love You 🥰🥰😘
+</div>
+
+</div>
+
+<script>
+
+const noBtn=document.getElementById("no");
+const yesBtn=document.getElementById("yes");
+const love=document.getElementById("love");
+
+function moveNo(){
+
+const x=Math.random()*(window.innerWidth-100);
+const y=Math.random()*(window.innerHeight-50);
+
+noBtn.style.position="fixed";
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+
+}
+
+noBtn.addEventListener("mouseenter",moveNo);
+noBtn.addEventListener("touchstart",moveNo);
+noBtn.addEventListener("click",moveNo);
+
+yesBtn.addEventListener("click",()=>{
+
+love.style.display="block";
+
+});
+
+</script>
+
+</body>
+</html>
